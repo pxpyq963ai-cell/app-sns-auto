@@ -1,0 +1,28 @@
+name: テスト投稿
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: 'x または instagram'
+        required: true
+        default: 'x'
+      text:
+        description: '本文'
+        required: true
+        default: '自動投稿のテストです。AIタロットアプリを作っています。'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - env:
+          TEST_TARGET: ${{ inputs.target }}
+          TEST_TEXT: ${{ inputs.text }}
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: node scripts/test-post.js
