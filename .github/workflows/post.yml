@@ -1,0 +1,32 @@
+name: 投稿係
+on:
+  schedule:
+    # 日本時間 6:45 / 11:45 / 20:45 に起きて、7:00 / 12:00 / 21:00 まで待って投稿
+    - cron: '45 21 * * *'
+    - cron: '45 2 * * *'
+    - cron: '45 11 * * *'
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency: { group: post, cancel-in-progress: false }
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: 投稿する
+        env:
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: node scripts/post.js
+      - name: 記録を保存
+        if: always()
+        run: |
+          git config user.name "sns-auto-bot"; git config user.email "actions@users.noreply.github.com"
+          git add data/posted.json && git commit -m "投稿記録 $(date -u +%FT%TZ)" && git pull --rebase && git push || echo "変更なし"

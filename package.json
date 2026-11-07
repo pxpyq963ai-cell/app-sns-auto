@@ -1,0 +1,1 @@
+{ "name": "sns-auto", "private": true, "type": "commonjs", "engines": { "node": ">=20" } }
