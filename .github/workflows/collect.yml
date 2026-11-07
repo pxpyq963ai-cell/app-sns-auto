@@ -1,0 +1,29 @@
+name: 集計係
+on:
+  schedule:
+    - cron: '0 15 * * *'   # 日本時間 0:00
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: 数字を集める
+        env:
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_SITE_TAG: ${{ secrets.CF_SITE_TAG }}
+        run: node scripts/collect.js
+      - name: 保存
+        run: |
+          git config user.name "sns-auto-bot"; git config user.email "actions@users.noreply.github.com"
+          git add data/metrics && git commit -m "数字 $(date -u +%F)" && git pull --rebase && git push || echo "変更なし"
