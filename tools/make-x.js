@@ -5,9 +5,32 @@
 //  B 予定別   : card, rev, plan（work/meet/home/off/tired）, hook（画像の見出し。<br>で改行）
 //  C カード解説: card, hook
 //  howto 使い方: 追加の項目なし
+//  "video": true にすると、全スライドの約20秒動画（BGMつき）も作り、Xには動画で出す（失敗したら画像で出す）
 const fs = require('fs'); const path = require('path');
 const { chromium } = require('playwright');
 const g = require('./gen.js'); const { findNG } = require('../lib/ng');
+const { execFileSync } = require('child_process');
+// 動画：全スライドを1枚4.5秒、0.5秒で切り替え、BGMつきの約20秒の縦動画にする
+async function makeVideo(p, slides, out) {
+  const tmp = fs.mkdtempSync(path.join(require('os').tmpdir(), 'v-'));
+  const pngs = [];
+  for (let i = 0; i < slides.length; i++) {
+    const f = path.join(__dirname, `_v${i}.html`);
+    fs.writeFileSync(f, slides[i].replace('選んだら、スワイプ →', '選んだら、そのまま見てください').replace('スワイプ →', 'このまま見てください'));
+    await p.goto('file://' + f); await p.evaluate(() => document.fonts.ready); await p.waitForTimeout(300);
+    const png = path.join(tmp, `${i}.png`); await p.screenshot({ path: png }); fs.unlinkSync(f); pngs.push(png);
+  }
+  const D = 4.5, X = 0.5, n = pngs.length, total = n * D - (n - 1) * X;
+  const args = ['-v', 'error', '-y'];
+  pngs.forEach(f => args.push('-loop', '1', '-t', String(D), '-i', f));
+  args.push('-i', path.join(__dirname, 'bgm_mystic.m4a'));
+  let chain = '', last = '[0:v]';
+  for (let i = 1; i < n; i++) { const o = i === n - 1 ? '[v]' : `[x${i}]`; chain += `${last}[${i}:v]xfade=transition=fade:duration=${X}:offset=${(i * (D - X)).toFixed(2)}${o};`; last = o; }
+  args.push('-filter_complex', chain + `[${n}:a]afade=t=out:st=${(total - 1.5).toFixed(2)}:d=1.5[a]`, '-map', '[v]', '-map', '[a]',
+    '-t', total.toFixed(2), '-r', '30', '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '26', '-preset', 'medium', '-c:a', 'aac', '-b:a', '128k', '-movflags', '+faststart', out);
+  execFileSync('ffmpeg', args);
+  fs.rmSync(tmp, { recursive: true });
+}
 (async () => {
   const plan = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
   const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1080, height: 1920 } });
@@ -19,13 +42,16 @@ const g = require('./gen.js'); const { findNG } = require('../lib/ng');
     const w = s => [...(s || '')].reduce((a, c) => a + (c.codePointAt(0) > 0x10ff ? 2 : 1), 0);
     for (const t of [e.text, e.reply]) if (w(t) > 280) throw new Error(`${e.id}: Xの文字数オーバー（全角140字まで）`);
     const dir = path.join(__dirname, '..', 'queue', e.id); fs.mkdirSync(dir, { recursive: true });
-    const slide = kind === 'A' ? g.pickA(e.label, e.picks)[0] : kind === 'B' ? g.typeB(e.card, e.rev || 0, e.plan, e.hook)[0]
-      : kind === 'C' ? g.about(e.card, e.hook)[0] : g.howto()[0];
+    const slides = kind === 'A' ? g.pickA(e.label, e.picks) : kind === 'B' ? g.typeB(e.card, e.rev || 0, e.plan, e.hook)
+      : kind === 'C' ? g.about(e.card, e.hook) : g.howto();
+    const slide = slides[0];
     const html = slide.replace('選んだら、スワイプ →', '答えは返信で →').replace('スワイプ →', '答えは返信で →');
     const f = path.join(__dirname, '_tmp.html'); fs.writeFileSync(f, html);
     await p.goto('file://' + f); await p.evaluate(() => document.fonts.ready); await p.waitForTimeout(300);
     await p.screenshot({ path: path.join(dir, '01.jpg'), type: 'jpeg', quality: 88 }); fs.unlinkSync(f);
-    fs.writeFileSync(path.join(dir, 'post.json'), JSON.stringify({ at: e.at, x: { text: e.text, reply: e.reply, image: '01.jpg' } }, null, 2) + '\n');
+    const x = { text: e.text, reply: e.reply, image: '01.jpg' };
+    if (e.video) { await makeVideo(p, slides, path.join(dir, 'short.mp4')); x.video = 'short.mp4'; }
+    fs.writeFileSync(path.join(dir, 'post.json'), JSON.stringify({ at: e.at, x }, null, 2) + '\n');
     console.log('○', e.id);
   }
   await b.close();

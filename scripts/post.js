@@ -31,7 +31,8 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
         if (k === 'x') {
           if (!X.ready()) throw new Error('Xの鍵が未設定');
           const image = p.x.image ? path.join(dir, p.x.image) : null;
-          ids = DRY ? ['dry'] : await X.post({ text: p.x.text, image, reply: p.x.reply });
+          const video = p.x.video ? path.join(dir, p.x.video) : null;
+          ids = DRY ? ['dry'] : await X.post({ text: p.x.text, image, video, reply: p.x.reply });
         } else {
           if (!IG.ready()) throw new Error('Instagramの鍵が未設定');
           const urls = p.instagram.images.map(f => `https://raw.githubusercontent.com/${REPO}/${BRANCH}/queue/${encodeURIComponent(id)}/${f}`);
