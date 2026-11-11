@@ -1,0 +1,104 @@
+{
+  "collected_at": "2026-11-11T21:50:14.710Z",
+  "x": [
+    {
+      "post": "2026-11-09_0700_xA",
+      "id": "2119557087080358170",
+      "created_at": "2026-11-08T22:26:03.000Z",
+      "bookmark_count": 0,
+      "impression_count": 3,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-09_1200_xB",
+      "id": "2119626028352213155",
+      "created_at": "2026-11-09T03:00:00.000Z",
+      "bookmark_count": 0,
+      "impression_count": 2,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-09_2100_xC",
+      "id": "2119761924896264412",
+      "created_at": "2026-11-09T12:00:00.000Z",
+      "bookmark_count": 0,
+      "impression_count": 1,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-10_0700_xA",
+      "id": "2119912938152620455",
+      "created_at": "2026-11-09T22:00:05.000Z",
+      "bookmark_count": 0,
+      "impression_count": 4,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-10_1200_xB",
+      "id": "2119988416284697022",
+      "created_at": "2026-11-10T03:00:00.000Z",
+      "bookmark_count": 0,
+      "impression_count": 0,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-10_2100_xC",
+      "id": "2120124312762085829",
+      "created_at": "2026-11-10T12:00:00.000Z",
+      "bookmark_count": 0,
+      "impression_count": 2,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-11_0700_xA",
+      "id": "2120275306992877929",
+      "created_at": "2026-11-10T22:00:00.000Z",
+      "bookmark_count": 0,
+      "impression_count": 1,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-11_1200_xB",
+      "id": "2120350804804546803",
+      "created_at": "2026-11-11T03:00:00.000Z",
+      "bookmark_count": 0,
+      "impression_count": 0,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-11_2100_xC",
+      "id": "2120486700405125475",
+      "created_at": "2026-11-11T12:00:00.000Z",
+      "bookmark_count": 0,
+      "impression_count": 1,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    }
+  ]
+}
