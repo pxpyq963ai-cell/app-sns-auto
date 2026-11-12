@@ -1,0 +1,30 @@
+name: Threads・Instagramの鍵を更新
+on:
+  schedule:
+    - cron: '0 0 1,15 * *'   # 毎月1日と15日（鍵は60日で切れるため、早めに新しくする）
+  workflow_dispatch: {}
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { target: threads, secret: THREADS_ACCESS_TOKEN }
+          - { target: instagram, secret: IG_ACCESS_TOKEN }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: 新しい鍵をもらって金庫へ保存（鍵が未登録なら何もしない）
+        env:
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+          SECRET_NAME: ${{ matrix.secret }}
+        run: |
+          if [ -z "${!SECRET_NAME}" ]; then echo "${SECRET_NAME} は未登録なので飛ばします"; exit 0; fi
+          if [ -z "$GH_TOKEN" ]; then echo "GH_PAT が未登録のため金庫を書き換えられません"; exit 1; fi
+          NEW=$(node scripts/refresh-token.js ${{ matrix.target }})
+          echo "::add-mask::$NEW"
+          gh secret set "$SECRET_NAME" --body "$NEW" --repo "$GITHUB_REPOSITORY"

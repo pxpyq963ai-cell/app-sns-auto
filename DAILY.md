@@ -3,11 +3,11 @@
 毎日 日本時間 1時台に動く（0時の数字集めのあと）。TKの方針：分析して見られやすくする作業は常に自動で行う。運営はClaudeに任されている。
 
 ## 1. 点検
-- `data/posted.json` に失敗（error）や禁止語ブロック（blocked）がないか。あれば原因を調べ、`queue/` 側で直せるもの（文字数、禁止語、画像の欠け）は直す。プログラムの不具合なら `reports/daily/` に書く（lib/ scripts/ .github/ は変えない）
+- `data/posted.json` に失敗（error）や禁止語ブロック（blocked）がないか（x・threads・instagram それぞれ）。Threads・Instagramの鍵切れ（401や「Session has expired」）なら、reports/daily/ に書き、TKに知らせる必要があることを明記する。あれば原因を調べ、`queue/` 側で直せるもの（文字数、禁止語、画像の欠け）は直す。プログラムの不具合なら `reports/daily/` に書く（lib/ scripts/ .github/ は変えない）
 - キューが3日分未満なら、ROUTINE.md の作り方で7日分まで足す（止まらないための保険）
 
 ## 2. 昨日の数字を見る
-- 最新の `data/metrics/*.json` から、直近の投稿の表示回数・返信・いいね、アプリ訪問数、X（t.co）からの訪問を見る
+- 最新の `data/metrics/*.json` から、直近の投稿の表示回数・返信・いいね（X・Threads・Instagram それぞれ）、アプリ訪問数、X（t.co）からの訪問を見る
 - `data/posted.json` に「メディア」の記録はないので、post.json の video の有無で画像か動画かを判断する
 - 過去の投稿（同じ曜日・同じ hook_type・画像か動画か）と比べて、よかった点・悪かった点を1〜2行で
 
