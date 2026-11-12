@@ -6,7 +6,7 @@ const { findNG } = require('../lib/ng'); const X = require('../lib/x'); const IG
 const ROOT = path.join(__dirname, '..'); const Q = path.join(ROOT, 'queue'); const LOG = path.join(ROOT, 'data', 'posted.json');
 const DRY = !!process.env.DRY_RUN;
 const EARLY_MS = 20 * 60e3;   // 予定の20分前から起きて待つ
-const LATE_MS = 3 * 3600e3;   // 3時間以上遅れたものは出さない（古い投稿を急に出さない）
+const LATE_MS = 2 * 3600e3;   // 2時間以上遅れたものは出さない（「おはよう」が昼に出るなど、時間に合わない投稿を防ぐ）
 const REPO = process.env.GITHUB_REPOSITORY || 'OWNER/sns-auto';
 const BRANCH = process.env.GITHUB_REF_NAME || 'main';
 const sleep = ms => new Promise(r => setTimeout(r, ms));
