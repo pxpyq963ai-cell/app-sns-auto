@@ -2,7 +2,7 @@
 
 ## 3つの係
 - **作文係**（Claudeのルーチン・毎週）：数字を分析 → 翌週分の投稿を `queue/` に入れる
-- **投稿係**（`.github/workflows/post.yml`・毎日 7:00 / 12:00 / 21:00）：`queue/` の投稿を X・Instagram に出す
+- **投稿係**（`.github/workflows/post.yml`・毎日 7:00 / 12:00 / 21:00）：`queue/` の投稿を X・Threads・Instagram に出す（鍵が未登録のSNSは飛ばす）
 - **集計係**（`.github/workflows/collect.yml`・毎日 0:00）：数字を `data/metrics/日付.json` に保存
 
 ## 投稿1本の形（queue/2026-11-12_0700_型A/post.json）
@@ -26,6 +26,7 @@
 |---|---|
 | X_API_KEY / X_API_SECRET | XアプリのConsumer Key / Secret |
 | X_ACCESS_TOKEN / X_ACCESS_SECRET | @tkver005 のAccess Token / Secret（読み書き権限） |
+| THREADS_ACCESS_TOKEN | Threads（@tkkoumei）のアクセストークン（60日。毎月1日・15日に自動更新） |
 | IG_ACCESS_TOKEN | Instagram（@tkkoumei）の長期アクセストークン |
-| GH_PAT | Instagramの鍵を自動更新するためのGitHubトークン（このリポジトリのSecrets書き込み権限のみ） |
+| GH_PAT | Threads・Instagramの鍵を自動更新するためのGitHubトークン（このリポジトリのSecrets書き込み権限のみ） |
 | CF_API_TOKEN / CF_ACCOUNT_ID / CF_SITE_TAG | Cloudflare Web Analytics の読み取り用 |

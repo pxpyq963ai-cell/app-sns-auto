@@ -1,4 +1,4 @@
-// 作文係の道具：計画ファイル（JSON）から、X用の投稿を queue/ に作る
+// 作文係の道具：計画ファイル（JSON）から、X・Threads・Instagram用の投稿を queue/ に作る
 // 使い方: node tools/make-x.js plans/2026-11-12.json
 // 計画の1件（kind で画像の種類が変わる。共通: id, at, kind, hook_type, score, text, reply）
 //  A 直感で1枚: label, picks:[[カード,0正/1逆]×3]
@@ -6,6 +6,8 @@
 //  C カード解説: card, hook
 //  howto 使い方: 追加の項目なし
 //  "video": true にすると、全スライドの約20秒動画（BGMつき）も作り、Xには動画で出す（失敗したら画像で出す）
+//  "th": {text, reply}  → Threadsにも出す。全スライド（縦9:16）をカルーセルで。本文500字まで
+//  "ig": {caption}      → Instagramにも出す。全スライドを縦4:5（1080x1350、上下ぼかし背景）に直してカルーセルで。2200字・タグ30個まで
 const fs = require('fs'); const path = require('path');
 const { chromium } = require('playwright');
 const g = require('./gen.js'); const { findNG } = require('../lib/ng');
@@ -31,6 +33,18 @@ async function makeVideo(p, slides, out) {
   execFileSync('ffmpeg', args);
   fs.rmSync(tmp, { recursive: true });
 }
+// スライド1枚を写真にする（swipe=true ならカルーセル用に「スワイプ →」のまま）
+async function shot(p, html, out, opt = {}) {
+  const f = path.join(__dirname, '_tmp.html'); fs.writeFileSync(f, html);
+  await p.goto('file://' + f); await p.evaluate(() => document.fonts.ready); await p.waitForTimeout(300);
+  await p.screenshot({ path: out, type: opt.png ? 'png' : 'jpeg', ...(opt.png ? {} : { quality: 88 }) }); fs.unlinkSync(f);
+}
+// 縦9:16 → 縦4:5（Instagramのフィードの上限）。全体を縮めて真ん中に置き、左右は同じ絵をぼかして埋める
+function toIG(src, out) {
+  execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', src, '-filter_complex',
+    '[0]scale=1080:1920,crop=1080:1350,boxblur=40:2,eq=brightness=-0.15[bg];[0]scale=-2:1350[fg];[bg][fg]overlay=(W-w)/2:0',
+    '-frames:v', '1', '-q:v', '3', out]);
+}
 (async () => {
   const plan = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
   const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1080, height: 1920 } });
@@ -41,17 +55,35 @@ async function makeVideo(p, slides, out) {
     const ng = findNG(e.text, e.reply); if (ng.length) throw new Error(`${e.id}: 禁止語 ${ng}`);
     const w = s => [...(s || '')].reduce((a, c) => a + (c.codePointAt(0) > 0x10ff ? 2 : 1), 0);
     for (const t of [e.text, e.reply]) if (w(t) > 280) throw new Error(`${e.id}: Xの文字数オーバー（全角140字まで）`);
+    if (e.th) {
+      const ng2 = findNG(e.th.text, e.th.reply); if (ng2.length) throw new Error(`${e.id}: Threadsに禁止語 ${ng2}`);
+      for (const t of [e.th.text, e.th.reply]) if ([...(t || '')].length > 500) throw new Error(`${e.id}: Threadsは500字まで`);
+    }
+    if (e.ig) {
+      const ng3 = findNG(e.ig.caption); if (ng3.length) throw new Error(`${e.id}: Instagramに禁止語 ${ng3}`);
+      if ([...e.ig.caption].length > 2200 || (e.ig.caption.match(/#/g) || []).length > 30) throw new Error(`${e.id}: Instagramの文字数かタグ数オーバー`);
+    }
     const dir = path.join(__dirname, '..', 'queue', e.id); fs.mkdirSync(dir, { recursive: true });
     const slides = kind === 'A' ? g.pickA(e.label, e.picks) : kind === 'B' ? g.typeB(e.card, e.rev || 0, e.plan, e.hook)
       : kind === 'C' ? g.about(e.card, e.hook) : g.howto();
     const slide = slides[0];
     const html = slide.replace('選んだら、スワイプ →', '答えは返信で →').replace('スワイプ →', '答えは返信で →');
-    const f = path.join(__dirname, '_tmp.html'); fs.writeFileSync(f, html);
-    await p.goto('file://' + f); await p.evaluate(() => document.fonts.ready); await p.waitForTimeout(300);
-    await p.screenshot({ path: path.join(dir, '01.jpg'), type: 'jpeg', quality: 88 }); fs.unlinkSync(f);
+    await shot(p, html, path.join(dir, '01.jpg'));
     const x = { text: e.text, reply: e.reply, image: '01.jpg' };
     if (e.video) { await makeVideo(p, slides, path.join(dir, 'short.mp4')); x.video = 'short.mp4'; }
-    fs.writeFileSync(path.join(dir, 'post.json'), JSON.stringify({ at: e.at, x }, null, 2) + '\n');
+    const out = { at: e.at, x };
+    if (e.th || e.ig) {
+      const th = [], ig = [];
+      for (let i = 0; i < slides.length; i++) {
+        const png = path.join(__dirname, `_s${i}.png`); await shot(p, slides[i], png, { png: true });
+        if (e.th) { const f = `th${i + 1}.jpg`; execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', png, '-q:v', '3', path.join(dir, f)]); th.push(f); }
+        if (e.ig) { const f = `ig${i + 1}.jpg`; toIG(png, path.join(dir, f)); ig.push(f); }
+        fs.unlinkSync(png);
+      }
+      if (e.th) out.threads = { text: e.th.text, reply: e.th.reply, images: th };
+      if (e.ig) out.instagram = { caption: e.ig.caption, images: ig };
+    }
+    fs.writeFileSync(path.join(dir, 'post.json'), JSON.stringify(out, null, 2) + '\n');
     console.log('○', e.id);
   }
   await b.close();

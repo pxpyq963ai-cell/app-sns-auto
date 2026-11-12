@@ -1,6 +1,6 @@
-// 集計係：X・Instagram・アプリの数字を集めて data/metrics/日付.json に保存
+// 集計係：X・Threads・Instagram・アプリの数字を集めて data/metrics/日付.json に保存
 const fs = require('fs'); const path = require('path');
-const X = require('../lib/x'); const IG = require('../lib/ig'); const CF = require('../lib/cf');
+const X = require('../lib/x'); const IG = require('../lib/ig'); const CF = require('../lib/cf'); const TH = require('../lib/threads');
 const ROOT = path.join(__dirname, '..'); const LOG = path.join(ROOT, 'data', 'posted.json');
 const DAYS = 7;  // 直近7日分の投稿だけ数字を取る（Xは読むたびに料金がかかるため）
 (async () => {
@@ -14,6 +14,12 @@ const DAYS = 7;  // 直近7日分の投稿だけ数字を取る（Xは読むた�
       const xs = recent('x'); const m = await X.metrics(xs.map(x => x.ids[0]));
       out.x = m.map(t => ({ post: (xs.find(x => x.ids[0] === t.id) || {}).id, ...t }));
     } catch (e) { out.x = { error: e.message }; }
+  }
+  if (TH.ready()) {
+    try {
+      const ts = recent('threads'); const m = await TH.metrics(ts.map(x => x.ids[0]));
+      out.threads = { account: m.account, posts: m.posts.map(t => ({ post: (ts.find(x => x.ids[0] === t.id) || {}).id, ...t })) };
+    } catch (e) { out.threads = { error: e.message }; }
   }
   if (IG.ready()) {
     try {
