@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-11-12T16:18:16.956Z",
+  "collected_at": "2026-11-12T21:48:56.021Z",
   "x": [
     {
       "post": "2026-11-09_0700_xA",
@@ -105,11 +105,23 @@
       "id": "2120849087046234498",
       "created_at": "2026-11-12T12:00:00.000Z",
       "bookmark_count": 0,
-      "impression_count": 0,
+      "impression_count": 1,
       "like_count": 0,
       "quote_count": 0,
       "reply_count": 1,
       "retweet_count": 0
     }
-  ]
+  ],
+  "threads": {
+    "account": {
+      "followers_count": 0
+    },
+    "posts": []
+  },
+  "instagram": {
+    "account": {
+      "error": "IG GET /me 400: {\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace_id\":\"AzlmSlTnGzzA_WZbjgjZ21b\"}}"
+    },
+    "posts": []
+  }
 }
