@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-11-15T16:18:06.953Z",
+  "collected_at": "2026-11-15T20:17:31.239Z",
   "x": [
     {
       "post": "2026-11-09_0700_xA",
@@ -213,13 +213,13 @@
   ],
   "threads": {
     "account": {
-      "error": "Threads GET /me/threads_insights 400: {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"error_subcode\":5258005,\"fbtrace_id\":\"ACvR32maY75Ep3ygm9PLD_m\"}}"
+      "error": "Threads GET /me/threads_insights 400: {\"error\":{\"message\":\"API access blocked.\",\"type\":\"OAuthException\",\"code\":200,\"error_subcode\":5258005,\"fbtrace_id\":\"Ai2hwHWQLZsKdV7s_gHOFfD\"}}"
     },
     "posts": []
   },
   "instagram": {
     "account": {
-      "error": "IG GET /me 400: {\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace_id\":\"Au_ASbgxvIR5_WE79COEBhb\"}}"
+      "error": "IG GET /me 400: {\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace_id\":\"A6GukPvYdCFScyObsozVtxS\"}}"
     },
     "posts": []
   }
