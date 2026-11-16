@@ -3,6 +3,7 @@
 ## 3つの係
 - **作文係**（Claudeのルーチン・毎週）：数字を分析 → 翌週分の投稿を `queue/` に入れる
 - **投稿係**（`.github/workflows/post.yml`・毎日 7:00 / 12:00 / 21:00）：`queue/` の投稿を X・Threads・Instagram に出す（鍵が未登録のSNSは飛ばす）
+- **TikTok係**（`tools/tiktok-pack.js`・作文係のあと）：計画に `tt` の付いた動画と投稿文を1週間分のフォルダにまとめる。TikTokはTKが週1回まとめて手で予約する
 - **集計係**（`.github/workflows/collect.yml`・毎日 0:00）：数字を `data/metrics/日付.json` に保存
 
 ## 投稿1本の形（queue/2026-11-12_0700_型A/post.json）
