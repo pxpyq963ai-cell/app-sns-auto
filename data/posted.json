@@ -276,8 +276,11 @@
       "at": "2026-11-19T03:00:01.052Z"
     },
     "threads": {
-      "error": "Threads POST /me/threads_publish 400: {\"error\":{\"message\":\"The requested resource does not exist\",\"code\":24,\"type\":\"OAuthException\",\"error_subcode\":4279009,\"is_transient\":false,\"error_user_msg\":\"The media with id 17922838422287677 cannot be found.\",\"error_user_title\":\"Media Not Found\",\"fbtrace_id\":\"Akou3RIaGS9CogsvO1yDjaE\"}}",
-      "at": "2026-11-19T03:00:22.138Z"
+      "ids": [
+        "17914832727488497",
+        "18103308584416580"
+      ],
+      "at": "2026-11-19T03:07:26.945Z"
     }
   }
 }
