@@ -1,17 +1,6 @@
 {
-  "collected_at": "2026-11-20T16:18:27.900Z",
+  "collected_at": "2026-11-20T22:12:41.579Z",
   "x": [
-    {
-      "post": "2026-11-14_0700_xA",
-      "id": "2121362489359179924",
-      "created_at": "2026-11-13T22:00:05.000Z",
-      "bookmark_count": 0,
-      "impression_count": 23,
-      "like_count": 0,
-      "quote_count": 0,
-      "reply_count": 1,
-      "retweet_count": 0
-    },
     {
       "post": "2026-11-14_1200_xB",
       "id": "2121437968787255736",
@@ -61,7 +50,7 @@
       "id": "2121936251154481278",
       "created_at": "2026-11-15T12:00:00.000Z",
       "bookmark_count": 0,
-      "impression_count": 2,
+      "impression_count": 3,
       "like_count": 0,
       "quote_count": 0,
       "reply_count": 1,
@@ -160,7 +149,7 @@
       "id": "2123023415447531644",
       "created_at": "2026-11-18T12:00:00.000Z",
       "bookmark_count": 0,
-      "impression_count": 2,
+      "impression_count": 4,
       "like_count": 0,
       "quote_count": 0,
       "reply_count": 1,
@@ -193,7 +182,7 @@
       "id": "2123385854639096091",
       "created_at": "2026-11-19T12:00:13.000Z",
       "bookmark_count": 0,
-      "impression_count": 8,
+      "impression_count": 9,
       "like_count": 0,
       "quote_count": 0,
       "reply_count": 1,
@@ -227,6 +216,17 @@
       "created_at": "2026-11-20T12:00:00.000Z",
       "bookmark_count": 0,
       "impression_count": 0,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-21_0700_xA",
+      "id": "2123899202598269074",
+      "created_at": "2026-11-20T22:00:04.000Z",
+      "bookmark_count": 0,
+      "impression_count": 2,
       "like_count": 0,
       "quote_count": 0,
       "reply_count": 1,
@@ -287,12 +287,22 @@
         "reposts": 0,
         "quotes": 0,
         "shares": 0
+      },
+      {
+        "post": "2026-11-21_0700_xA",
+        "id": "17886303642529559",
+        "views": 0,
+        "likes": 0,
+        "replies": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0
       }
     ]
   },
   "instagram": {
     "account": {
-      "error": "IG GET /me 400: {\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace_id\":\"AXWiSSo-t-YBB4ejwXZf97X\"}}"
+      "error": "IG GET /me 400: {\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace_id\":\"AmmHJr2-vQv66-zPCmmsLSi\"}}"
     },
     "posts": []
   }
