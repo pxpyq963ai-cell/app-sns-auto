@@ -1,17 +1,6 @@
 {
-  "collected_at": "2026-11-23T16:19:10.971Z",
+  "collected_at": "2026-11-24T02:06:32.909Z",
   "x": [
-    {
-      "post": "2026-11-17_0700_xA",
-      "id": "2122449634752643383",
-      "created_at": "2026-11-16T22:00:00.000Z",
-      "bookmark_count": 0,
-      "impression_count": 0,
-      "like_count": 0,
-      "quote_count": 0,
-      "reply_count": 1,
-      "retweet_count": 0
-    },
     {
       "post": "2026-11-17_1200_xB",
       "id": "2122525131335749840",
@@ -94,7 +83,7 @@
       "id": "2123385854639096091",
       "created_at": "2026-11-19T12:00:13.000Z",
       "bookmark_count": 0,
-      "impression_count": 11,
+      "impression_count": 13,
       "like_count": 0,
       "quote_count": 0,
       "reply_count": 1,
@@ -138,7 +127,7 @@
       "id": "2123899202598269074",
       "created_at": "2026-11-20T22:00:04.000Z",
       "bookmark_count": 0,
-      "impression_count": 20,
+      "impression_count": 21,
       "like_count": 0,
       "quote_count": 0,
       "reply_count": 1,
@@ -226,7 +215,18 @@
       "id": "2124835376787312992",
       "created_at": "2026-11-23T12:00:06.000Z",
       "bookmark_count": 0,
-      "impression_count": 18,
+      "impression_count": 27,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-24_0700_xA",
+      "id": "2124986371844530621",
+      "created_at": "2026-11-23T22:00:06.000Z",
+      "bookmark_count": 0,
+      "impression_count": 52,
       "like_count": 0,
       "quote_count": 0,
       "reply_count": 1,
@@ -377,12 +377,22 @@
         "reposts": 0,
         "quotes": 0,
         "shares": 0
+      },
+      {
+        "post": "2026-11-24_0700_xA",
+        "id": "18436634269147764",
+        "views": 0,
+        "likes": 0,
+        "replies": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0
       }
     ]
   },
   "instagram": {
     "account": {
-      "error": "IG GET /me 400: {\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace_id\":\"A72k8YTxjQ2dlClxmE_K7XM\"}}"
+      "error": "IG GET /me 400: {\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace_id\":\"Aboe4_WxJEIbTaOx1aY1GwW\"}}"
     },
     "posts": []
   }
