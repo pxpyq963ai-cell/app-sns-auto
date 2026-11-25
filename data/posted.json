@@ -608,8 +608,8 @@
       "at": "2026-11-25T12:01:40.737Z"
     },
     "instagram": {
-      "error": "IG POST /me/media 400: {\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace_id\":\"AutyukcZo9HilxcuI1X3dqb\"}}",
-      "at": "2026-11-25T12:01:40.814Z"
+      "error": "IG POST /me/media 400: {\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace_id\":\"AaQffLqxWoaqFBv-fmSRVZh\"}}",
+      "at": "2026-11-25T12:31:37.971Z"
     }
   }
 }
