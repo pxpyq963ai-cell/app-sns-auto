@@ -1,17 +1,6 @@
 {
-  "collected_at": "2026-11-27T16:18:27.384Z",
+  "collected_at": "2026-11-27T23:20:48.955Z",
   "x": [
-    {
-      "post": "2026-11-21_0700_xA",
-      "id": "2123899202598269074",
-      "created_at": "2026-11-20T22:00:04.000Z",
-      "bookmark_count": 0,
-      "impression_count": 24,
-      "like_count": 0,
-      "quote_count": 0,
-      "reply_count": 1,
-      "retweet_count": 0
-    },
     {
       "post": "2026-11-21_1200_xB",
       "id": "2123974683334975942",
@@ -94,7 +83,7 @@
       "id": "2124835376787312992",
       "created_at": "2026-11-23T12:00:06.000Z",
       "bookmark_count": 0,
-      "impression_count": 33,
+      "impression_count": 34,
       "like_count": 0,
       "quote_count": 0,
       "reply_count": 1,
@@ -226,7 +215,18 @@
       "id": "2126284922700656960",
       "created_at": "2026-11-27T12:00:04.000Z",
       "bookmark_count": 0,
-      "impression_count": 20,
+      "impression_count": 27,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-28_0700_xA",
+      "id": "2126435918403821614",
+      "created_at": "2026-11-27T22:00:04.000Z",
+      "bookmark_count": 0,
+      "impression_count": 8,
       "like_count": 0,
       "quote_count": 0,
       "reply_count": 1,
@@ -238,16 +238,6 @@
       "followers_count": 0
     },
     "posts": [
-      {
-        "post": "2026-11-21_0700_xA",
-        "id": "17886303642529559",
-        "views": 0,
-        "likes": 0,
-        "replies": 1,
-        "reposts": 0,
-        "quotes": 0,
-        "shares": 0
-      },
       {
         "post": "2026-11-21_1200_xB",
         "id": "17919511494521158",
@@ -401,7 +391,7 @@
       {
         "post": "2026-11-26_1200_xB",
         "id": "18085441550345364",
-        "views": 1,
+        "views": 2,
         "likes": 0,
         "replies": 1,
         "reposts": 0,
@@ -421,7 +411,7 @@
       {
         "post": "2026-11-27_0700_xA",
         "id": "17959986579320884",
-        "views": 0,
+        "views": 1,
         "likes": 0,
         "replies": 1,
         "reposts": 0,
@@ -441,6 +431,16 @@
       {
         "post": "2026-11-27_2100_xC",
         "id": "18188996464421359",
+        "views": 1,
+        "likes": 0,
+        "replies": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0
+      },
+      {
+        "post": "2026-11-28_0700_xA",
+        "id": "18101785343655235",
         "views": 0,
         "likes": 0,
         "replies": 1,
@@ -452,7 +452,7 @@
   },
   "instagram": {
     "account": {
-      "error": "IG GET /me 400: {\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace_id\":\"AQkE8K5usLV6fAYEeskmMSh\"}}"
+      "error": "IG GET /me 400: {\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace_id\":\"A3OlqAVW0VAU6i5MQyCyyQo\"}}"
     },
     "posts": []
   }
