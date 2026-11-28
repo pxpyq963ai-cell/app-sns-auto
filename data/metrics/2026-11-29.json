@@ -1,0 +1,459 @@
+{
+  "collected_at": "2026-11-28T16:18:41.827Z",
+  "x": [
+    {
+      "post": "2026-11-22_0700_xA",
+      "id": "2124261591759601949",
+      "created_at": "2026-11-21T22:00:05.000Z",
+      "bookmark_count": 0,
+      "impression_count": 20,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-22_1200_xB",
+      "id": "2124337071481631040",
+      "created_at": "2026-11-22T03:00:00.000Z",
+      "bookmark_count": 0,
+      "impression_count": 3,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-22_2100_xC",
+      "id": "2124472988947100040",
+      "created_at": "2026-11-22T12:00:06.000Z",
+      "bookmark_count": 0,
+      "impression_count": 62,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-23_0700_xA",
+      "id": "2124623979700711882",
+      "created_at": "2026-11-22T22:00:05.000Z",
+      "bookmark_count": 0,
+      "impression_count": 77,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-23_1200_xB",
+      "id": "2124699459057766627",
+      "created_at": "2026-11-23T03:00:00.000Z",
+      "bookmark_count": 0,
+      "impression_count": 6,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-23_2100_xC",
+      "id": "2124835376787312992",
+      "created_at": "2026-11-23T12:00:06.000Z",
+      "bookmark_count": 0,
+      "impression_count": 35,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-24_0700_xA",
+      "id": "2124986371844530621",
+      "created_at": "2026-11-23T22:00:06.000Z",
+      "bookmark_count": 0,
+      "impression_count": 57,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-24_1200_xB",
+      "id": "2125061863822307589",
+      "created_at": "2026-11-24T03:00:04.000Z",
+      "bookmark_count": 0,
+      "impression_count": 57,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-24_2100_xC",
+      "id": "2125197763797197207",
+      "created_at": "2026-11-24T12:00:05.000Z",
+      "bookmark_count": 0,
+      "impression_count": 32,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-25_0700_xA",
+      "id": "2125348758653157840",
+      "created_at": "2026-11-24T22:00:05.000Z",
+      "bookmark_count": 0,
+      "impression_count": 39,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-25_1200_xB",
+      "id": "2125424252405035057",
+      "created_at": "2026-11-25T03:00:04.000Z",
+      "bookmark_count": 0,
+      "impression_count": 53,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-25_2100_xC",
+      "id": "2125560152019570984",
+      "created_at": "2026-11-25T12:00:05.000Z",
+      "bookmark_count": 0,
+      "impression_count": 56,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-26_0700_xA",
+      "id": "2125711143519895638",
+      "created_at": "2026-11-25T22:00:05.000Z",
+      "bookmark_count": 0,
+      "impression_count": 34,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-26_1200_xB",
+      "id": "2125786639695831474",
+      "created_at": "2026-11-26T03:00:04.000Z",
+      "bookmark_count": 0,
+      "impression_count": 41,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-26_2100_xC",
+      "id": "2125922540254019841",
+      "created_at": "2026-11-26T12:00:05.000Z",
+      "bookmark_count": 0,
+      "impression_count": 12,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-27_0700_xA",
+      "id": "2126073530794041517",
+      "created_at": "2026-11-26T22:00:04.000Z",
+      "bookmark_count": 0,
+      "impression_count": 13,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-27_1200_xB",
+      "id": "2126149028681314586",
+      "created_at": "2026-11-27T03:00:05.000Z",
+      "bookmark_count": 0,
+      "impression_count": 21,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-27_2100_xC",
+      "id": "2126284922700656960",
+      "created_at": "2026-11-27T12:00:04.000Z",
+      "bookmark_count": 0,
+      "impression_count": 28,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-28_0700_xA",
+      "id": "2126435918403821614",
+      "created_at": "2026-11-27T22:00:04.000Z",
+      "bookmark_count": 0,
+      "impression_count": 18,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-28_1200_xB",
+      "id": "2126511421492007039",
+      "created_at": "2026-11-28T03:00:06.000Z",
+      "bookmark_count": 0,
+      "impression_count": 11,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    },
+    {
+      "post": "2026-11-28_2100_xC",
+      "id": "2126647317415522753",
+      "created_at": "2026-11-28T12:00:06.000Z",
+      "bookmark_count": 0,
+      "impression_count": 7,
+      "like_count": 0,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    }
+  ],
+  "threads": {
+    "account": {
+      "followers_count": 0
+    },
+    "posts": [
+      {
+        "post": "2026-11-22_0700_xA",
+        "id": "17879661756576596",
+        "views": 2,
+        "likes": 0,
+        "replies": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0
+      },
+      {
+        "post": "2026-11-22_1200_xB",
+        "id": "17918403045517948",
+        "views": 0,
+        "likes": 0,
+        "replies": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0
+      },
+      {
+        "post": "2026-11-22_2100_xC",
+        "id": "17991546345084449",
+        "views": 0,
+        "likes": 0,
+        "replies": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0
+      },
+      {
+        "post": "2026-11-23_0700_xA",
+        "id": "18653814517012873",
+        "views": 1,
+        "likes": 0,
+        "replies": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0
+      },
+      {
+        "post": "2026-11-23_1200_xB",
+        "id": "18093829967239079",
+        "views": 2,
+        "likes": 0,
+        "replies": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0
+      },
+      {
+        "post": "2026-11-23_2100_xC",
+        "id": "18150516667605795",
+        "views": 0,
+        "likes": 0,
+        "replies": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0
+      },
+      {
+        "post": "2026-11-24_0700_xA",
+        "id": "18436634269147764",
+        "views": 0,
+        "likes": 0,
+        "replies": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0
+      },
+      {
+        "post": "2026-11-24_1200_xB",
+        "id": "18130212586884065",
+        "views": 0,
+        "likes": 0,
+        "replies": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0
+      },
+      {
+        "post": "2026-11-24_2100_xC",
+        "id": "18075297863665569",
+        "views": 2,
+        "likes": 0,
+        "replies": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0
+      },
+      {
+        "post": "2026-11-25_0700_xA",
+        "id": "18139124105490299",
+        "views": 1,
+        "likes": 0,
+        "replies": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0
+      },
+      {
+        "post": "2026-11-25_1200_xB",
+        "id": "18122879869768184",
+        "views": 1,
+        "likes": 0,
+        "replies": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0
+      },
+      {
+        "post": "2026-11-25_2100_xC",
+        "id": "18136840978664744",
+        "views": 0,
+        "likes": 0,
+        "replies": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0
+      },
+      {
+        "post": "2026-11-26_0700_xA",
+        "id": "18453341383131965",
+        "views": 0,
+        "likes": 0,
+        "replies": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0
+      },
+      {
+        "post": "2026-11-26_1200_xB",
+        "id": "18085441550345364",
+        "views": 2,
+        "likes": 0,
+        "replies": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0
+      },
+      {
+        "post": "2026-11-26_2100_xC",
+        "id": "18448833418198353",
+        "views": 4,
+        "likes": 0,
+        "replies": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0
+      },
+      {
+        "post": "2026-11-27_0700_xA",
+        "id": "17959986579320884",
+        "views": 1,
+        "likes": 0,
+        "replies": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0
+      },
+      {
+        "post": "2026-11-27_1200_xB",
+        "id": "18095083601231231",
+        "views": 0,
+        "likes": 0,
+        "replies": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0
+      },
+      {
+        "post": "2026-11-27_2100_xC",
+        "id": "18188996464421359",
+        "views": 1,
+        "likes": 0,
+        "replies": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0
+      },
+      {
+        "post": "2026-11-28_0700_xA",
+        "id": "18101785343655235",
+        "views": 0,
+        "likes": 0,
+        "replies": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0
+      },
+      {
+        "post": "2026-11-28_1200_xB",
+        "id": "18139595512677823",
+        "views": 0,
+        "likes": 0,
+        "replies": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0
+      },
+      {
+        "post": "2026-11-28_2100_xC",
+        "id": "18129099400999352",
+        "views": 1,
+        "likes": 0,
+        "replies": 1,
+        "reposts": 0,
+        "quotes": 0,
+        "shares": 0
+      }
+    ]
+  },
+  "instagram": {
+    "account": {
+      "error": "IG GET /me 400: {\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace_id\":\"A4GXxJXLH0wmatff6Gc2Yd-\"}}"
+    },
+    "posts": []
+  }
+}
